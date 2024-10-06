@@ -1,9 +1,3 @@
-local vim = vim
-local builtin = require('telescope.builtin')
-vim.keymap.set('n', '<leader>ff', function()
-   builtin.find_files({ hidden = true, noremap = true, silent = true})
-end)
-vim.keymap.set('n', '<C-p>', builtin.git_files, {})
-vim.keymap.set('n', '<leader>ps', function()
-   builtin.grep_string({ search = vim.fn.input("Grep > ") });
-end)
+version https://git-lfs.github.com/spec/v1
+oid sha256:1f72eabd60c3827939799cefa7522ea8f2eb9d22a44198a9a3e6d1bcafeddeb8
+size 346

@@ -1,12 +1,3 @@
-require("toggleterm").setup({
-  size = 20,
-  border = 'double',
-  direction = 'vertical',
-  function(term)
-    if term.direction == "horizontal" then
-      return 20
-    elseif term.direction == "vertical" then
-      return vim.o.columns * 0.7
-    end
-  end,
-})
+version https://git-lfs.github.com/spec/v1
+oid sha256:85e9828990cff7e9b316fa084abdc190022cdf595b26819957a120236d14fb35
+size 262

@@ -1,18 +1,3 @@
-require("solarized-osaka").setup({
-  transparent = false,
-  terminal_colors = true, -- Configure the colors used when opening a `:terminal` in [Neovim](https://github.com/neovim/neovim)
-  styles = {
-    comments = { italic = true },
-    keywords = { italic = true },
-    functions = {},
-    variables = {},
-    sidebars = "dark", -- style for sidebars, see below
-    floats = "dark", -- style for floating windows
-  },
-  sidebars = { "qf", "help" }, -- Set a darker background on sidebar-like windows. For example: `["qf", "vista_kind", "terminal", "packer"]`
-  day_brightness = 0.3, -- Adjusts the brightness of the colors of the **Day** style. Number between 0 and 1, from dull to vibrant colors
-  hide_inactive_statusline = false, -- Enabling this option, will hide inactive statuslines and replace them with a thin border instead. Should work with the standard **StatusLine** and **LuaLine**.
-  dim_inactive = false, -- dims inactive windows
-  lualine_bold = false, -- When `true`, section headers in the lualine theme will be bold
-
-})
+version https://git-lfs.github.com/spec/v1
+oid sha256:212e0538f08eb3e44e9ec713480a9740ada3dab7bf5ddc6fa3045fa009128c87
+size 1040

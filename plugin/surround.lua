@@ -1,8 +1,3 @@
--- Add, Change, Delete Surrounding Chars (["''"])
-return {
-  -- https://github.com/kylechui/nvim-surround
-  'kylechui/nvim-surround',
-  version = "*", -- Use for stability; omit to use `main` branch for the latest features
-  event = "VeryLazy",
-  opts = {}
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:bca6ede53cc5d8464802f6663df8e482d42c5dc026efe401ae7283b8b93fb843
+size 259

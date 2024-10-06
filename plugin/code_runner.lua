@@ -1,25 +1,3 @@
-require('code_runner').setup({
-  filetype = {
-     java ="cd $dir && javac $fileName && java $fileNameWithoutExt",
-     python = "python3 -u",
-     typescript = "deno run",
-     rust = "cd $dir && rustc $fileName && $dir/$fileNameWithoutExt",
-    c = function(...)
-      c_base = {
-        "cd $dir &&",
-        "gcc $fileName -o",
-        "/tmp/$fileNameWithoutExt",
-      }
-      local c_exec = {
-        "&& /tmp/$fileNameWithoutExt &&",
-        "rm /tmp/$fileNameWithoutExt",
-      }
-      vim.ui.input({ prompt = "Add more args:" }, function(input)
-        c_base[4] = input
-        vim.print(vim.tbl_extend("force", c_base, c_exec))
-        require("code_runner.commands").run_from_fn(vim.list_extend(c_base, c_exec))
-      end)
-    end,
-vim.keymap.set('n', '<leader>r', ":RunCode<CR>", { noremap = true, silent = true, })
-  },
-})
+version https://git-lfs.github.com/spec/v1
+oid sha256:b1c593e1199a8e5ec253916955b30acc8f1a6ac9dcc39223735bacd0e2ba7e21
+size 856
