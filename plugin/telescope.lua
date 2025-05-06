@@ -1,3 +1,25 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:1f72eabd60c3827939799cefa7522ea8f2eb9d22a44198a9a3e6d1bcafeddeb8
-size 346
+local vim = vim
+local builtin = require('telescope.builtin')
+vim.keymap.set('n', '<leader>ff', function()
+   builtin.find_files({ hidden = false, noremap = true, silent = true})
+end)
+vim.keymap.set('n', '<leader>fg', function()
+   builtin.find_files({ hidden = true, noremap = true, silent = true})
+end)
+vim.keymap.set('n', '<leader>fh', function()
+   builtin.find_files({ cwd = '/home/buddy/.config/', hidden = false, noremap = true, silent = true})
+end)
+vim.keymap.set('n', '<leader>fl', function()
+   builtin.find_files({ cwd = '/home/buddy/.local/', hidden = false, noremap = true, silent = true})
+end)
+vim.keymap.set('n', '<C-p>', builtin.git_files, {})
+vim.keymap.set('n', '<leader>ps', function()
+   builtin.grep_string({ search = vim.fn.input("Grep > ") });
+end)
+
+vim.api.nvim_set_hl(0, "TelescopeBorder", { fg = "#61afef", bg = "NONE" })
+vim.api.nvim_set_hl(0, "TelescopePromptBorder", { fg = "#c678dd", bg = "NONE" })
+vim.api.nvim_set_hl(0, "TelescopePreviewBorder", { fg = "#e5c07b", bg = "NONE" })
+vim.api.nvim_set_hl(0, "TelescopeSelection", { fg = "#ffffff", bg = "#3e4451" })
+vim.api.nvim_set_hl(0, "TelescopeMatching", { fg = "#d19a66", bg = "NONE", bold = true })
+vim.api.nvim_set_hl(0, "TelescopeNormal", { fg = "#abb2bf", bg = "NONE" })

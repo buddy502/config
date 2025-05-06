@@ -1,3 +1,6 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:fab8591dfbd9930df883caf531026984cae79fbf0d85ca088127d8c70fee23d1
-size 217
+local mark = require("harpoon.mark")
+local ui = require("harpoon.ui")
+
+vim.keymap.set("n", "<leader>a", mark.add_file)
+vim.keymap.set("n", "<leader>e", mark.rm_file)
+vim.keymap.set("n", "<C-e>", ui.toggle_quick_menu)

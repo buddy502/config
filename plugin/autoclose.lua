@@ -1,3 +1,26 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:a46aa822a20f154038ec45a69b1db431de2bafe3a5222115391eb18773d26816
-size 874
+require('autoclose').setup({
+    keys = {
+        ["["] = { escape = false, close = true, pair = "[]" },
+        ["{"] = { escape = false, close = true, pair = "{}" },
+
+        ["]"] = { escape = true, close = false, pair = "[]" },
+        ["}"] = { escape = true, close = false, pair = "{}" },
+
+        ["<"] = { escape = false, close = false, pair = "" },
+        [">"] = { escape = true, close = false, pair = "" },
+        ["("] = { escape = false, close = false, pair = "" },
+        [")"] = { escape = true, close = false, pair = "" },
+
+        ['"'] = { escape = false, close = false, pair = '""' },
+        ["'"] = { escape = false, close = false, pair = "''" },
+        ["`"] = { escape = false, close = false, pair = "``" },
+    },
+    options = {
+        disabled_filetypes = { "text" },
+        disable_when_touch = false,
+        touch_regex = "[%w(%[{]",
+        pair_spaces = false,
+        auto_indent = true,
+        disable_command_mode = false,
+    },
+})
