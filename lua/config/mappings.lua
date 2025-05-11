@@ -107,4 +107,5 @@ keymap.set({'n', 'v'}, '<S-m>', "$");
 keymap.set("n", "<S-o>", "O<Esc>", { noremap = true, silent = true })
 
 -- :noh command end search
-keymap.set("n", "<F12>", ":noh<CR>")
+
+keymap.set("n", "<C-9>", ":noh<CR>")
