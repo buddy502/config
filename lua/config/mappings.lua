@@ -109,3 +109,4 @@ keymap.set("n", "<S-o>", "O<Esc>", { noremap = true, silent = true })
 -- :noh command end search
 
 keymap.set("n", "<C-9>", ":noh<CR>")
+keymap.set("n", "<C-\\>", ":noh<CR>")
