@@ -30,7 +30,7 @@ capabilities.textDocument.completion.completionItem.snippetSupport = true
 
 -- Activate LSPs
 -- All LSPs in this list need to be manually installed via NPM/PNPM/whatevs
-local lspconfig = require('lspconfig')
+
 local servers = {
    'zls',
    'lua_ls',
@@ -44,22 +44,22 @@ local servers = {
    'gopls',
 }
 
-for _, lsp in pairs(servers) do
-   lspconfig[lsp].setup {
+for _, server in ipairs(servers) do
+   vim.lsp.config(server,{
       on_attach = on_attach,
       capabilities = capabilities,
-   }
+   })
 end
 
 require("mason").setup()
 require('mason-lspconfig').setup()
 
-lspconfig.cssls.setup {
+vim.lsp.config("cssls", {
    on_attach = on_attach,
    capabilities = capabilities
-}
+})
 
-lspconfig.html.setup {
+vim.lsp.config("html", {
    on_attach = on_attach,
    capabilities = capabilities
-}
+})
