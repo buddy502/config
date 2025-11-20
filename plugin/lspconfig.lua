@@ -17,11 +17,9 @@ local on_attach = function(client, bufnr)
    -- Mappings to magical LSP functions!
    local bufopts = { noremap = true, silent = true, buffer = bufnr }
    vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, bufopts)
-   vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
-   vim.keymap.set('n', '<Leader>rr', vim.lsp.buf.rename, bufopts)
+   vim.keymap.set('n', 'gd', require('telescope.builtin').lsp_definitions, bufopts)
    vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
    vim.keymap.set('n', '<Leader>f', function() vim.lsp.buf.format { async = true } end, bufopts)
-   vim.keymap.set('n', '<Leader>K', vim.lsp.buf.hover, opts)
 end
 
 -- The nvim-cmp almost supports LSP's capabilities so You should advertise it to LSP servers..
@@ -49,22 +47,13 @@ local servers = {
 for _, lsp in pairs(servers) do
    lspconfig[lsp].setup {
       on_attach = on_attach,
-      capabilites = capabilities,
+      capabilities = capabilities,
    }
 end
 
 require("mason").setup()
-require("mason-lspconfig").setup({
-   ensure_installed = {
-      "lua_ls",
-      "rust_analyzer",
-      "zls",
-      "html",
-   }
-})
--- This is an interesting one, for some reason these two LSPs (CSS/HTML) need to
--- be activated separately outside of the above loop. If someone can tell me why,
--- send me a note...
+require('mason-lspconfig').setup()
+
 lspconfig.cssls.setup {
    on_attach = on_attach,
    capabilities = capabilities
@@ -73,14 +62,4 @@ lspconfig.cssls.setup {
 lspconfig.html.setup {
    on_attach = on_attach,
    capabilities = capabilities
-}
-
-lspconfig.tsserver.setup {
-   on_attach = on_attach,
-   capabilities = capabilities,
-   init_options = {
-      preferences = {
-         disableSuggestions = true,
-      }
-   }
 }

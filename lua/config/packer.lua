@@ -43,9 +43,11 @@ use {
 }
 
 -- lsp lua
-use 'williamboman/mason.nvim'
-use 'williamboman/mason-lspconfig.nvim'
+use 'mason-org/mason.nvim'
+use 'mason-org/mason-lspconfig.nvim'
 use 'neovim/nvim-lspconfig'
+use 'lsp_signature.nvim'
+
 use "jose-elias-alvarez/null-ls.nvim"
 use 'hrsh7th/nvim-cmp'
 use ({"akinsho/toggleterm.nvim", tag = '*', config = function()
@@ -54,9 +56,9 @@ end})
 
 use 'preservim/nerdtree'
 use 'vim-airline/vim-airline'
-use 'guangxue/vim-emmet-expand'
+use 'mattn/emmet-vim'
 use 'hrsh7th/cmp-nvim-lsp'
-use 'm4xshen/autoclose.nvim'
+use 'windwp/nvim-autopairs'
 use 'ryanoasis/vim-devicons'
 use 'xiyaowong/transparent.nvim'
 use 'nvim-lua/plenary.nvim'

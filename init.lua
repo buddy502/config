@@ -26,3 +26,7 @@ vim.o.foldlevel = 3
 vim.o.foldlevelstart = 99
 
 vim.api.nvim_set_hl(0, "Comment", { fg = "#6fbf73"})
+
+vim.g['airline#extensions#diagnostic#enabled'] = 0
+vim.g['airline#extensions#ale#enabled'] = 0
+vim.g['airline#extensions#whitespace#enabled'] = 0
