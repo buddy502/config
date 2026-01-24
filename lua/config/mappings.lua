@@ -4,6 +4,21 @@ vim.g.mapleader = " "
 local keymap = vim.keymap
 local opts = { noremap = true, silent = true }
 
+keymap.set("n", "j", "h", opts)
+keymap.set("n", "k", "j", opts)
+keymap.set("n", "l", "k", opts)
+keymap.set("n", ";", "l", opts)
+
+keymap.set("v", "j", "h", opts)
+keymap.set("v", "k", "j", opts)
+keymap.set("v", "l", "k", opts)
+keymap.set("v", ";", "l", opts)
+
+keymap.set("o", "j", "h", opts)
+keymap.set("o", "k", "j", opts)
+keymap.set("o", "l", "k", opts)
+keymap.set("o", ";", "l", opts)
+
 keymap.set("n", "<leader>pv", ":Ex<CR>")
 
 keymap.set("v", "K", ":m '>+1<CR>gv=gv")
