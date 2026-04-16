@@ -63,3 +63,9 @@ vim.lsp.config("html", {
    on_attach = on_attach,
    capabilities = capabilities
 })
+
+vim.filetype.add({
+  extension = {
+    inc = "asm",
+  },
+})
