@@ -69,3 +69,9 @@ vim.filetype.add({
     inc = "asm",
   },
 })
+
+vim.lsp.config("asm_lsp", {
+  filetypes = { "asm", "s", "S" },
+})
+
+vim.lsp.enable("asm_lsp")

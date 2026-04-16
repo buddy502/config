@@ -1,4 +1,7 @@
 local vim = vim
+
+vim.cmd [[packadd packer.nvim]]
+
 require('config.mappings')
 require('config.set')
 require('config.packer')

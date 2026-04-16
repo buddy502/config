@@ -15,10 +15,19 @@ local packer_bootstrap = ensure_packer()
 return require('packer').startup(function(use)
 
     use "wbthomason/packer.nvim"
-    use {
-        'nvim-telescope/telescope.nvim', tag = '0.1.8',
+
+--tag = '0.1.8',
+
+    use { 'nvim-telescope/telescope.nvim', config = function()
+       require("telescope").setup({
+          defaults = {
+             preview = {
+                treesitter = false,
+             },
+          },
+       })
+   end }
         requires = { {'nvim-lua/plenary.nvim'} }
-    }
     use ('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'}, {
         indent = { enable = true },
     })

@@ -30,12 +30,24 @@ keymap.set("n", "<C-j>", ":cprev<CR>zz")
 keymap.set("n", "<leader>k", ":lnext<CR>zz")
 keymap.set("n", "<leader>j", ":lprev<CR>zz")
 
---Window switch
-keymap.set("n", "<C-h>", "<C-w>h", { desc = "switch window left" })
-keymap.set("n", "<C-l>", "<C-w>l", { desc = "switch window right" })
+-- vim key change
+keymap.set('n', 'j', 'h')  -- j moves left (previously h)
+keymap.set('n', 'k', 'j')  -- k moves down (previously j)
+keymap.set('n', 'l', 'k')  -- l moves up (previously k)
+keymap.set('n', ';', 'l')  -- ; moves right (previously l)
 
-keymap.set("n", "<C-j>", "<C-w>j", { desc = "switch window down" })
-keymap.set("n", "<C-k>", "<C-w>k", { desc = "switch window up" })
+keymap.set('v', 'j', 'h')  -- j moves left (previously h)
+keymap.set('v', 'k', 'j')  -- k moves down (previously j)
+keymap.set('v', 'l', 'k')  -- l moves up (previously k)
+keymap.set('v', ';', 'l')  -- ; moves right (previously l)
+
+keymap.set('n', 'h', '<Nop>')
+
+-- Window Switch
+keymap.set("n", "<C-j>", "<C-w>h", { desc = "switch window left" })
+keymap.set("n", "<C-k>", "<C-w>j", { desc = "switch window down" })
+keymap.set("n", "<C-l>", "<C-w>k", { desc = "switch window up" })
+keymap.set("n", "<C-;>", "<C-w>l", { desc = "switch window right" })
 
 keymap.set("n", "<leader>s", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>")
 keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
