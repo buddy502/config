@@ -75,3 +75,5 @@ vim.lsp.config("asm_lsp", {
 })
 
 vim.lsp.enable("asm_lsp")
+
+vim.lsp.handlers["textDocument/signatureHelp"] = function() end
