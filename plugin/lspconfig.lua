@@ -59,6 +59,8 @@ vim.lsp.config("cssls", {
    capabilities = capabilities
 })
 
+local lspconfig = require("lspconfig")
+
 vim.lsp.config("html", {
    on_attach = on_attach,
    capabilities = capabilities
@@ -66,14 +68,23 @@ vim.lsp.config("html", {
 
 vim.filetype.add({
   extension = {
-    inc = "asm",
+    asm = 'asm',
+    s = 'asm',
+    S = 'asm',
+    inc = 'asm',
   },
 })
 
-vim.lsp.config("asm_lsp", {
-  filetypes = { "asm", "s", "S" },
+vim.lsp.config('asm-lsp', {
+  cmd = { 'asm-lsp' },
+  filetypes = { 'asm' },
+  root_markers = { '.asm-lsp.toml', '.git' },
 })
 
-vim.lsp.enable("asm_lsp")
-
-vim.lsp.handlers["textDocument/signatureHelp"] = function() end
+-- Enable it for asm filetype
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = 'asm',
+  callback = function(args)
+    vim.lsp.start({ name = 'asm-lsp', bufnr = args.buf })
+  end,
+})
