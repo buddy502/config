@@ -6,8 +6,8 @@ local opts = { noremap = true, silent = true }
 
 keymap.set("n", "<leader>pv", ":Ex<CR>")
 
-keymap.set("v", "J", ":m '>+1<CR>gv=gv")
-keymap.set("v", "K", ":m '<-2<CR>gv=gv")
+keymap.set("v", "K", ":m '>+1<CR>gv=gv")
+keymap.set("v", "L", ":m '<-2<CR>gv=gv")
 
 keymap.set("n", "J", "mzJ`z")
 keymap.set("n", "<C-u>", "<C-u>zz")
@@ -42,6 +42,7 @@ keymap.set('v', 'l', 'k')  -- l moves up (previously k)
 keymap.set('v', ';', 'l')  -- ; moves right (previously l)
 
 keymap.set('n', 'h', '<Nop>')
+keymap.set('v', 'h', '<Nop>')
 
 -- Window Switch
 keymap.set("n", "<C-j>", "<C-w>h", { desc = "switch window left" })
