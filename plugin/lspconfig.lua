@@ -64,8 +64,6 @@ vim.lsp.config("html", {
    capabilities = capabilities
 })
 
-local lspconfig = require("lspconfig")
-
 vim.filetype.add({
   extension = {
     asm = 'asm',
