@@ -30,6 +30,11 @@ keymap.set("n", "<C-j>", ":cprev<CR>zz")
 keymap.set("n", "<leader>k", ":lnext<CR>zz")
 keymap.set("n", "<leader>j", ":lprev<CR>zz")
 
+-- change find next on current line
+-- Note: 'x' is all visual modes, 'o' is pending cmd mode
+keymap.set("n", "'", "<Nop>")
+keymap.set({ "n", "x", "o" }, "'", ";")
+
 -- vim key change
 keymap.set('n', 'j', 'h')  -- j moves left (previously h)
 keymap.set('n', 'k', 'j')  -- k moves down (previously j)

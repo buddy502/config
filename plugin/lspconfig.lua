@@ -59,12 +59,12 @@ vim.lsp.config("cssls", {
    capabilities = capabilities
 })
 
-local lspconfig = require("lspconfig")
-
 vim.lsp.config("html", {
    on_attach = on_attach,
    capabilities = capabilities
 })
+
+local lspconfig = require("lspconfig")
 
 vim.filetype.add({
   extension = {
