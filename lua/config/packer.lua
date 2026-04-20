@@ -56,7 +56,7 @@ use 'mason-org/mason.nvim'
 use 'mason-org/mason-lspconfig.nvim'
 use 'neovim/nvim-lspconfig'
 
-use "ray-x/lsp_signature.nvim"
+--use "ray-x/lsp_signature.nvim"
 
 use 'hrsh7th/cmp-nvim-lsp'
 use "jose-elias-alvarez/null-ls.nvim"
