@@ -31,37 +31,54 @@ capabilities.textDocument.completion.completionItem.snippetSupport = true
 -- Activate LSPs
 -- All LSPs in this list need to be manually installed via NPM/PNPM/whatevs
 
+local lspconfig = require("lspconfig")
+
 local servers = {
-   'zls',
-   'lua_ls',
-   'rust_analyzer',
-   'pyright',
-   'asm_lsp',
-   'css_variables',
-   'jsonls',
-   'clangd',
-   'quick_lint_js',
-   'gopls',
+  "zls",
+  "lua_ls",
+  "rust_analyzer",
+  "pyright",
+  "asm_lsp",
+  "jsonls",
+  "clangd",
+  "gopls",
 }
 
 for _, server in ipairs(servers) do
-   vim.lsp.config(server,{
-      on_attach = on_attach,
-      capabilities = capabilities,
-   })
+  lspconfig[server].setup({
+    on_attach = on_attach,
+    capabilities = capabilities,
+  })
 end
 
-require("mason").setup()
-require('mason-lspconfig').setup()
+--lspconfig.tsserver.setup({
+--  on_attach = on_attach,
+--  capabilities = capabilities,
+--  init_options = {
+--    preferences = {
+--      disableSuggestions = true,
+--    },
+--  },
+--})
 
-vim.lsp.config("cssls", {
-   on_attach = on_attach,
-   capabilities = capabilities
-})
-
-vim.lsp.config("html", {
-   on_attach = on_attach,
-   capabilities = capabilities
+lspconfig.asm_lsp.setup({
+  on_attach = on_attach,
+  capabilities = capabilities,
+  settings = {
+    ["asm-lsp"] = {
+      compileCommands = {
+        ["*.s"] = {
+          "gcc",
+          "-c",
+          "-o",
+          "/dev/null",
+          "-x",
+          "assembler",
+          "${file}",
+        },
+      },
+    },
+  },
 })
 
 vim.filetype.add({

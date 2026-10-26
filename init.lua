@@ -10,7 +10,7 @@ vim.g.NERDTreeShowHidden = 1
 
 vim.cmd [[colorscheme tokyonight-storm]]
 
-require("dap-python").setup("/home/buddy/.virtualenvs/debugpy/bin/python3")
+--require("dap-python").setup("/home/buddy/.virtualenvs/debugpy/bin/python3")
 
 vim.api.nvim_set_hl(0, "Comment", { fg = "green" })
 
@@ -33,3 +33,5 @@ vim.api.nvim_set_hl(0, "Comment", { fg = "#6fbf73"})
 vim.g['airline#extensions#diagnostic#enabled'] = 0
 vim.g['airline#extensions#ale#enabled'] = 0
 vim.g['airline#extensions#whitespace#enabled'] = 0
+
+require("mason").setup()

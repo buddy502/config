@@ -16,8 +16,6 @@ return require('packer').startup(function(use)
 
     use "wbthomason/packer.nvim"
 
---tag = '0.1.8',
-
     use { 'nvim-telescope/telescope.nvim', config = function()
        require("telescope").setup({
           defaults = {
@@ -33,11 +31,6 @@ return require('packer').startup(function(use)
     })
 
     use 'ziglang/zig.vim'
-
-    -- dap configs
-    use 'mfussenegger/nvim-dap'
-    use 'rcarriga/nvim-dap-ui'
-    use 'mfussenegger/nvim-dap-python'
 
     -- Themes for nvim
     use 'folke/tokyonight.nvim'
@@ -56,10 +49,7 @@ use 'mason-org/mason.nvim'
 use 'mason-org/mason-lspconfig.nvim'
 use 'neovim/nvim-lspconfig'
 
---use "ray-x/lsp_signature.nvim"
-
 use 'hrsh7th/cmp-nvim-lsp'
-use "jose-elias-alvarez/null-ls.nvim"
 use 'hrsh7th/nvim-cmp'
 
 use ({"akinsho/toggleterm.nvim", tag = '*', config = function()
@@ -68,7 +58,6 @@ end})
 
 use 'preservim/nerdtree'
 use 'vim-airline/vim-airline'
-use 'mattn/emmet-vim'
 
 use {"windwp/nvim-autopairs", config = function()
         require("nvim-autopairs").setup({
@@ -80,19 +69,12 @@ use {"windwp/nvim-autopairs", config = function()
 
 use 'ryanoasis/vim-devicons'
 use 'xiyaowong/transparent.nvim'
-use 'nvim-lua/plenary.nvim'
-use 'nvim-lua/completion-nvim'
-use 'CRAG666/code_runner.nvim'
 use 'mbbill/undotree'
 use 'romgrk/barbar.nvim'
-use 'nvim-tree/nvim-web-devicons'
-use 'nvim-neotest/nvim-nio'
 
-use { 'samodostal/image.nvim',
-   requires = { 'nvim-lua/plenary.nvim'},
-   config = function()
-      require("image").setup()
-   end}
+use 'nvim-lua/plenary.nvim'
+use 'nvim-lua/completion-nvim'
+use 'nvim-tree/nvim-web-devicons'
 
 use ('ThePrimeagen/harpoon',
 {['branch'] = 'harpoon2'})
@@ -100,10 +82,9 @@ if packer_bootstrap then
    require('packer').sync()
 end
 use ({"kylechui/nvim-surround",
-tag = "*", -- Use for stability; omit to use `main` branch for the latest features
+tag = "*",
 config = function()
    require("nvim-surround").setup({
-      -- Configuration here, or leave empty to use defaults
    })
 end})
 
